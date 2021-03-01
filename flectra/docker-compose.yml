@@ -26,34 +26,7 @@ services:
     - "7073:7073"
     environment:
       - HOST=flectra-db
-# ------------------------------------------------------------
-# Axelor instance
-# ------------------------------------------------------------
-  axelor:
-     image: axelor/aio-erp
-     container_name: axelor
-     restart: unless-stopped
-     volumes:
-      - axelor-tomcat-lib:/var/lib/tomcat
-      - axelor-postgres-lib:/var/lib/postgresql/data
-      - axelor-tomcat-log:/var/log/tomcat
-      - axelor-postgres-log:/var/log/postgresql
-     ports:
-      - 9880:80
-      - 9881:443
-      - 9882:8080
-     environment:
-        - NGINX_HOST=localhost
-        - NGINX_PORT=80
-        - POSTGRES_DB=axelor
-        - POSTGRES_USER=axelor
-        - POSTGRES_PASSWORD=axelor
-  
 volumes:
   flectra-addons:
   flectra-db:
-  axelor-tomcat-lib:
-  axelor-postgres-lib:
-  axelor-tomcat-log:
-  axelor-postgres-log:
 

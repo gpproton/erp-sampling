@@ -1,1 +1,1 @@
-# erp-sampling
+# Sample deployement of opensource ERP
